@@ -1,0 +1,8 @@
+.lang{
+    height: 70px;
+    width: 70px;
+    border-left: 5px solid rgb(53, 53, 53);
+    border-right: 5px solid rgb(53, 53, 53);
+    border-top: 5px solid rgb(53, 53, 53);
+    border-bottom: 5px solid rgb(53, 53, 53);
+}

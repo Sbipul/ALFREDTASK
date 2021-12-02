@@ -1,0 +1,87 @@
+body{
+    background: rgb(255, 0, 0);
+}
+.dFlex{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.roundeCircle{
+    border-radius: 50px;
+}
+.banner {
+    height: 100vh;
+    background-image: url('https://wallup.net/wp-content/uploads/2017/03/28/443665-photography-nature-landscape-sunset-mountains-clouds-fjord-snow-sky-boat-sunlight-Norway-PGMC-748x471.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
+}
+.banner:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: rgba(15, 23, 41, 0.884);
+    z-index: 1;
+}
+.backGround{
+    width: 100%;
+    background-image: url('https://i.pinimg.com/originals/10/cc/e7/10cce70eaf4f6531275e3f618d45af08.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.Row{
+    position: relative;
+    z-index: 2;
+}
+.custom_bg{
+    background: rgba(41, 55, 88, 0.658);
+    box-shadow: 5px 5px 5px rgb(27, 27, 27), -5px -5px 5px rgb(33, 40, 63);
+}
+.custom_bg2{
+    box-shadow: 5px 5px 5px rgb(27, 27, 27), -5px -5px 5px rgb(33, 40, 63);
+    border-radius: 5px;
+}
+.griD{
+    display: flex;
+    flex-direction: column;
+}
+.mainBanner{
+    height: 35vh;
+}
+@media only screen and (max-width: 600px) {
+    .banner {
+        height: 0vh;
+        background-image: url('https://wallup.net/wp-content/uploads/2017/03/28/443665-photography-nature-landscape-sunset-mountains-clouds-fjord-snow-sky-boat-sunlight-Norway-PGMC-748x471.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        object-fit: cover;
+        position: relative;
+        z-index: 0;
+    }
+    .griD{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .mainBanner{
+        height: 40%;
+    }
+    .custom_bg{
+        background: rgb(0, 18, 65);
+        box-shadow: 5px 5px 5px rgb(48, 48, 48), -5px -5px 5px rgb(47, 56, 82);
+    }
+    body{
+        background: rgb(10, 6, 6);
+    }
+  }
+
+::-webkit-scrollbar {
+    display: none;
+}
