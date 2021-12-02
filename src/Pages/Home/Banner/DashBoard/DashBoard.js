@@ -49,7 +49,7 @@ const DashBoard = () => {
                                     <input className="w-full mx-auto my-5 py-3 text-red-600 px-4 text-center" type="text" placeholder="City name" name="city" id="" /><br />
                                     <input className="w-full mx-auto my-5 px-4 py-3 text-center" type="text" placeholder="State of city" name="state" id="" /><br />
                                     <input className="w-full mx-auto my-5 px-4 py-3 text-center" type="text" placeholder="Country of city" name="country" id="" /><br />
-                                    <button className="bg-green-500 border border-green-600 text-white px-7 py-2" type="submit">Click</button>
+                                    <button className="bg-green-500 border border-green-600 text-white px-7 py-2" type="submit">Search Weather</button>
                                 </form>
                             </div>
                             {
