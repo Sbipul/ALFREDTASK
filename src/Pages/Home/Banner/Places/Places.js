@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../../Hooks/useAuth';
 import BlockA from '../BlockA/BlockA';
@@ -7,6 +7,7 @@ import Socials from '../Socials/Socials';
 
 const Places = () => {
     const {places,setPlaces} = useAuth()
+    const [hide,setHide] = useState(false)
 
     const delPlace = name => {
         const confirm = window.confirm('Are you sure wanna delete this place from your list?')
@@ -17,6 +18,19 @@ const Places = () => {
         
     }
 
+    const resetPlace = () => {
+        alert('Successfully your place has beem reset')
+        setPlaces([])
+    }
+
+    const hidePlace = e => {
+        document.getElementById('hidenBlock').style.display = 'none'
+        setHide(true)
+    }
+    const unHidePlace = e => {
+        document.getElementById('hidenBlock').style.display = 'block'
+        setHide(false)
+    }
 
     return (
         <div className="banner">
@@ -29,26 +43,29 @@ const Places = () => {
                     </div>
                     <div className="w-full sm:w-2/2 md:w-3/4 p-2">
                         {
-                            places.length && <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'20px'}}>
+                            places.length && <div><div id="hidenBlock"><div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'20px'}}>
                             {
                                 places.map(a => <div class="py-4 text-white border border-gray-100">
                                     
                                     <h1 className="text-5xl text-indigo-600 font-black">{a}</h1>
                                     <Link to={`/edit/${a}`}><button className="my-5 mx-5 border border-green-600 text-white px-4 py-2 bg-green-500" type="button" >Edit place</button></Link>
                                     <button className="my-5 mx-5 border border-green-600 text-white px-4 py-2 bg-red-500" type="button" onClick={()=>delPlace(a)}>Delete</button>
+                                    
                                 </div>)
+                            }
+                            </div>
+                            </div>
+                            <button className="my-5 mx-5 border border-green-600 text-white px-4 py-2 bg-red-500" type="button" onClick={resetPlace}>Reset places</button>
+                            {
+                                !hide ? <button className="my-5 mx-5 border border-green-600 text-white px-4 py-2 bg-blue-500" type="button" onClick={hidePlace}>Hide places</button> : <button className="my-5 mx-5 border border-green-600 text-white px-4 py-2 bg-green-500" type="button" onClick={unHidePlace}>Un Hide places</button>
                             }
                         </div>
                         }
+                        
                     </div>
                 </div>
             </div>
         </div>
     );
 };
-{/* <div class="flex items-stretch ...">
-  <div class="py-4">1</div>
-  <div class="py-12">2</div>
-  <div class="py-8">3</div>
-</div> */}
 export default Places;

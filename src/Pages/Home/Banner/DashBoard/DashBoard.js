@@ -30,7 +30,6 @@ const DashBoard = () => {
         alert('Added your place')
     }
     
-    console.log(weather)
     const temp = Math.round(weather?.main?.temp-273)
     // http://openweathermap.org/img/w/" + iconcode + ".png
     return (
